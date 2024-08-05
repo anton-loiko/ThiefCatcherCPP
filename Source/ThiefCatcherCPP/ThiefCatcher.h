@@ -16,6 +16,9 @@ class THIEFCATCHERCPP_API AThiefCatcher : public AMainCharacter
 {
 	GENERATED_BODY()
 
+private:
+	float JumpAnimationInPlayRate;
+
 public:
 	// Sets default values for this character's properties
 	AThiefCatcher();
@@ -33,6 +36,16 @@ public:
 	 */
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* Camera;
+
+	/**
+	 *  BluePrint:
+	 *  - Edit Anywhere
+	 *  - Blueprint can Read & Write
+	 *
+	 *  Category: JumpAnimation
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "JumpAnimation")
+	UAnimMontage* JumpAnimation;
 
 	virtual void SetupPlayerInputComponent(UInputComponent* MyPlayerInput) override;
 

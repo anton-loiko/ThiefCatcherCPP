@@ -6,6 +6,8 @@
 // Sets default values
 AThiefCatcher::AThiefCatcher(): Super()
 {
+	JumpAnimationInPlayRate = 1.0f;
+
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComponent"));
 	SpringArm->SetupAttachment(RootComponent);
 	SpringArm->TargetArmLength = 500.0f;
@@ -50,6 +52,11 @@ void AThiefCatcher::Jump()
 {
 	Super::Jump();
 	bPressedJump = true;
+
+	if (JumpAnimation)
+	{
+		PlayAnimMontage(JumpAnimation, JumpAnimationInPlayRate, NAME_None);
+	}
 }
 
 void AThiefCatcher::StopJump()
