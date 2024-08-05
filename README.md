@@ -20,7 +20,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone git@github.com:anton-loiko/ThiefCatcher.git
+   git clone git@github.com:anton-loiko/ThiefCatcherCPP.git
 
 2. Open the project in Unreal Engine.
 3. Build and run the project using Unreal Engine Editor.
