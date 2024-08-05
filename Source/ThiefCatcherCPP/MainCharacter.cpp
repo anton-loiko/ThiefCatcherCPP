@@ -17,32 +17,36 @@ AMainCharacter::AMainCharacter()
 
 float AMainCharacter::GetStaminaPercent() const
 {
-	return CharacterStamina; 
+	// Returns the current stamina percentage
+	return CharacterStamina;
 }
 
 float AMainCharacter::AddStamina()
 {
+	// Increase stamina by a specified amount and return the new value
 	CharacterStamina += 1;
-
 	return CharacterStamina;
 }
 
 float AMainCharacter::DecreaseStamina()
 {
+	// Decrease stamina by a specified amount and return the new value
 	CharacterStamina -= 1;
-
 	return CharacterStamina;
 }
 
 bool AMainCharacter::StaminaIsZero()
 {
+	// Check if stamina is depleted and update state accordingly
 	if (CharacterStamina <= 0)
 	{
 		bIsTired = true;
 
+		// Disable collision if character is tired
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
 
+	// Play tired sound at the character's location
 	UGameplayStatics::SpawnSoundAtLocation(this, TiredSound, GetActorLocation());
 
 	return bIsTired;

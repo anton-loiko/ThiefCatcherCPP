@@ -3,9 +3,13 @@
 
 #include "ThiefCatcherGameMode.h"
 
+// Sets default values for this GameMode's properties
 AThiefCatcherGameMode::AThiefCatcherGameMode(): Super()
 {
-	ConstructorHelpers::FClassFinder<APawn> MainCharacterThiefCatcher(TEXT("/Game/Blueprints/BP_MyThiefCatcher"));
+	// Find the class of the main character blueprint
+	static ConstructorHelpers::FClassFinder<APawn>
+		MainCharacterThiefCatcher(TEXT("/Game/Blueprints/BP_MyThiefCatcher"));
 
+	// Set the default pawn class for this game mode
 	DefaultPawnClass = MainCharacterThiefCatcher.Class;
 }

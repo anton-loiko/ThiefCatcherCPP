@@ -7,7 +7,9 @@
 #include "ThiefCatcherGameMode.generated.h"
 
 /**
+ * AThiefCatcherGameMode defines the game mode for the Thief Catcher game.
  * 
+ * This class handles game-specific logic and settings for the game mode.
  */
 UCLASS()
 class THIEFCATCHERCPP_API AThiefCatcherGameMode : public AGameModeBase

@@ -6,6 +6,10 @@
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+/**
+ * AMainCharacter is a character class responsible for handling stamina, sound,
+ * and animation related to the character's state.
+ */
 UCLASS()
 class THIEFCATCHERCPP_API AMainCharacter : public ACharacter
 {
@@ -16,35 +20,69 @@ public:
 	AMainCharacter();
 
 	/**
-	 *  BluePrint:
-	 *  - Editable only by default
+	 * The current stamina of the character.
+	 *
+	 * Category: "CharacterStamina"
+	 *
+	 * BluePrint:
+	 * - Editable only by default
 	 */
 	UPROPERTY(EditDefaultsOnly, Category = "CharacterStamina")
 	float CharacterStamina;
 
+	/**
+	 * Indicates if the character is tired.
+	 */
 	bool bIsTired;
 
+	/**
+	 * Get the current stamina percentage.
+	 * 
+	 * @return The current stamina as a percentage.
+	 */
 	float GetStaminaPercent() const;
+
+	/**
+	 * Increase the character's stamina.
+	 * 
+	 * @return The updated stamina value.
+	 */
 	float AddStamina();
+
+	/**
+	 * Decrease the character's stamina.
+	 * 
+	 * @return The updated stamina value.
+	 */
 	float DecreaseStamina();
 
-	// Method that is responsible for the death of a character
+	/**
+	 * Check if the character's stamina has reached zero.
+	 * 
+	 * This method also handles the character's tired state and plays the corresponding sound.
+	 * 
+	 * @return True if stamina is zero, otherwise false.
+	 */
 	bool StaminaIsZero();
 
 	/**
-	 * Sound played at character death
+	 * Sound played when the character is tired.
 	 *
-	 *  BluePrint:
-	 *  - Editable only by default
+	 * Category: "CharacterStamina"
+	 *
+	 * BluePrint:
+	 * - Editable only by default
 	 */
 	UPROPERTY(EditDefaultsOnly, Category = "CharacterStamina")
 	USoundBase* TiredSound;
 
 	/**
-	 * Animation played at character death
+	 * Animation played when the character is tired.
 	 *
-	 *  BluePrint:
-	 *  - Editable only by default
+	 * Category: "CharacterStamina"
+	 * 
+	 * BluePrint:
+	 * - Editable only by default
 	 */
 	UPROPERTY(EditDefaultsOnly, Category = "CharacterStamina")
 	UAnimMontage* VertigoAnimation;
