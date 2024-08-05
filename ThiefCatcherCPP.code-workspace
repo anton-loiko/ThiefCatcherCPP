@@ -1,0 +1,574 @@
+{
+	"folders": [
+		{
+			"name": "ThiefCatcherCPP",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/Users/Shared/Epic Games/UE_5.4"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "ThiefCatcherCPP Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Debug",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Debug",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPP Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Debug",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"DebugGame",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"DebugGame",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPP Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"DebugGame",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Development",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Development",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPP Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Development",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Test",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Test",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPP Mac Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Test",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Shipping",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Shipping",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPP Mac Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPP Mac Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPP",
+					"Mac",
+					"Shipping",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"Debug",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"Debug",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPPEditor Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"Debug",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPPEditor Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"Development",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"Development",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ThiefCatcherCPPEditor Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			},
+			{
+				"label": "ThiefCatcherCPPEditor Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ThiefCatcherCPPEditor",
+					"Mac",
+					"Development",
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/Shared/Epic Games/UE_5.4"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch ThiefCatcherCPP (Debug)",
+				"request": "launch",
+				"program": "/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
+				"preLaunchTask": "ThiefCatcherCPP Mac Debug Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPP (DebugGame)",
+				"request": "launch",
+				"program": "/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
+				"preLaunchTask": "ThiefCatcherCPP Mac DebugGame Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPP (Development)",
+				"request": "launch",
+				"program": "/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
+				"preLaunchTask": "ThiefCatcherCPP Mac Development Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPP (Test)",
+				"request": "launch",
+				"program": "/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
+				"preLaunchTask": "ThiefCatcherCPP Mac Test Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPP (Shipping)",
+				"request": "launch",
+				"program": "/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
+				"preLaunchTask": "ThiefCatcherCPP Mac Shipping Build",
+				"args": [
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPPEditor (Debug)",
+				"request": "launch",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
+				"preLaunchTask": "ThiefCatcherCPPEditor Mac Debug Build",
+				"args": [
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject"
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPPEditor (DebugGame)",
+				"request": "launch",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
+				"preLaunchTask": "ThiefCatcherCPPEditor Mac DebugGame Build",
+				"args": [
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject"
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ThiefCatcherCPPEditor (Development)",
+				"request": "launch",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
+				"preLaunchTask": "ThiefCatcherCPPEditor Mac Development Build",
+				"args": [
+					"/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject"
+				],
+				"cwd": "/Users/Shared/Epic Games/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Mac Development Build",
+				"program": "/Users/Shared/Epic Games/UE_5.4/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/Users/apple/tech/education/games/unreal/ThiefCatcherCPP/ThiefCatcherCPP.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/Users/Shared/Epic Games/UE_5.4"
+			}
+		]
+	}
+}

@@ -1,0 +1,21 @@
+# Delete all generated files
+Binaries/
+Build/
+Intermediate/
+Saved/
+*.suo
+*.user
+*.userprefs
+*.sdf
+*.suo
+*.log
+*.dmp
+
+# Ignore files and folders specific to Unreal Engine
+.vs/
+.idea/
+.vscode/
+*.xcodeproj/
+*.xcworkspace/
+
+
