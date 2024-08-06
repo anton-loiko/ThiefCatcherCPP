@@ -3,6 +3,8 @@
 
 #include "ThiefCatcher.h"
 
+#include "GameFramework/CharacterMovementComponent.h"
+
 // Sets default values
 AThiefCatcher::AThiefCatcher(): Super()
 {
@@ -23,6 +25,9 @@ AThiefCatcher::AThiefCatcher(): Super()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
+
+	// Enable Tick for this actor
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 void AThiefCatcher::SetupPlayerInputComponent(UInputComponent* MyPlayerInput)
@@ -80,10 +85,73 @@ void AThiefCatcher::StopJump()
 
 void AThiefCatcher::Sprint()
 {
-	// Implementation needed
+	bIsSprint = true;
+	GetCharacterMovement()->MaxWalkSpeed = 1200.0f;
+	// DecreaseStamina();
 }
 
 void AThiefCatcher::StopSprint()
 {
-	// Implementation needed
+	bIsSprint = false;
+	GetCharacterMovement()->MaxWalkSpeed = 600.0f;
+	// IncreaseStamina();
+
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		5.f,
+		FColor::Purple,
+		FString::Printf(TEXT("Sprint stoped"))
+	);
+}
+
+void AThiefCatcher::DecreaseStamina()
+{
+	CurrentStamina -= MinusStamina;
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		5.f,
+		FColor::Red,
+		FString::Printf(TEXT("Stamina decreased ==> %f"), CurrentStamina)
+	);
+}
+
+void AThiefCatcher::IncreaseStamina()
+{
+	CurrentStamina += PlusStamina;
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		5.f,
+		FColor::Green,
+		FString::Printf(TEXT("Stamina increased ==> %f"), CurrentStamina)
+	);
+}
+
+void AThiefCatcher::Tick(const float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+
+	// if (bIsSprint && CurrentStamina > 0.f)
+	// {
+	// 	DecreaseStamina();
+	// }
+	// else if (!bIsSprint && CurrentStamina < 100.f)
+	// {
+	// 	IncreaseStamina();
+	// }
+
+	if (bIsSprint && CurrentStamina > 0.f && CurrentStamina <= 100.f)
+	{
+		DecreaseStamina();
+	}
+
+	if (!bIsSprint && CurrentStamina < 100.f)
+	{
+		IncreaseStamina();
+	}
+
+	if (FMath::IsNearlyZero(CurrentStamina))
+	{
+		StopSprint();
+	}
 }

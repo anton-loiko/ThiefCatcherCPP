@@ -6,6 +6,7 @@
 #include "MainCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Math/UnrealMathUtility.h"
 #include "ThiefCatcher.generated.h"
 
 /**
@@ -72,9 +73,56 @@ public:
 	// Sprinting 	
 	// TODO: Move sprinting to its own components
 
+	/**
+	 * Indicates whether the character is currently sprinting.
+	 */
 	bool bIsSprint;
-	float CurrentStamina;
 
+	/**
+	 * The current stamina.
+	 *
+	 * Category: "Stamina"
+	 *
+	 * BluePrint:
+	 * - Editable only by default
+	 */
+	UPROPERTY(EditDefaultsOnly, Category = "Stamina", meta=(ClampMin="0", ClampMax="100"))
+	float CurrentStamina = 100.0f;
+
+	/**
+	 * The basic decrement stamina.
+	 *
+	 * Category: "Stamina"
+	 *
+	 * BluePrint:
+	 * - Editable only by default
+	 */
+	UPROPERTY(EditDefaultsOnly, Category = "Stamina")
+	float MinusStamina = 1.0f;
+
+	/**
+	 * The basic increment stamina.
+	 *
+	 * Category: "Stamina"
+	 *
+	 * BluePrint:
+	 * - Editable only by default
+	 */
+	UPROPERTY(EditDefaultsOnly, Category = "Stamina")
+	float PlusStamina = 1.0f;
+
+	// Starts the sprinting action for the character
 	void Sprint();
+
+	// Stops the sprinting action for the character
 	void StopSprint();
+
+	// Decreases the character's stamina by a certain amount
+	void DecreaseStamina();
+
+	// Increases the character's stamina by a certain amount
+	void IncreaseStamina();
+
+	// Overrides
+	virtual void Tick(float DeltaTime) override;
 };
