@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "CharacterHUD.h"
 #include "ThiefCatcherGameMode.generated.h"
 
 /**

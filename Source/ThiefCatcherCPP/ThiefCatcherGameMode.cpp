@@ -12,4 +12,7 @@ AThiefCatcherGameMode::AThiefCatcherGameMode(): Super()
 
 	// Set the default pawn class for this game mode
 	DefaultPawnClass = MainCharacterThiefCatcher.Class;
+
+	// Set the HUD class for this game mode to ACharacterHUD
+	HUDClass = ACharacterHUD::StaticClass();
 }
