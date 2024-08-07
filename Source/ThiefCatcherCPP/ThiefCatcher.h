@@ -98,7 +98,7 @@ public:
 	 * - Editable only by default
 	 */
 	UPROPERTY(EditDefaultsOnly, Category = "Stamina")
-	float MinusStamina = 1.0f;
+	float MinusStamina = 0.5f;
 
 	/**
 	 * The basic increment stamina.
